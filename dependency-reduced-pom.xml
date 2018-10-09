@@ -3,7 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sudipta.rest</groupId>
   <artifactId>rest-with-jersey</artifactId>
-  <packaging>war</packaging>
   <name>RESTfulExample Jersey Webapp</name>
   <version>1.0-1</version>
   <url>http://maven.apache.org</url>
@@ -47,6 +46,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
+              <mainClass>${mainClass}</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -66,7 +66,9 @@
           <createDependencyReducedPom>true</createDependencyReducedPom>
           <transformers>
             <transformer />
-            <transformer />
+            <transformer>
+              <mainClass>${mainClass}</mainClass>
+            </transformer>
           </transformers>
           <filters>
             <filter>
@@ -98,6 +100,7 @@
     </dependency>
   </dependencies>
   <properties>
+    <mainClass>com.sudipta.rest.KafkaConsumerApplication</mainClass>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
